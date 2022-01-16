@@ -1,0 +1,81 @@
+.app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+  background-color: rgb(196, 9, 9);
+
+  input {
+    color: white;
+    font-size: 20px;
+    width: 250px;
+    border: none;
+    background-color: rgba(247, 218, 218, 0);
+  }
+
+  .search-container {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(247, 218, 218, 0.479);
+  }
+
+  .logo-container-img .gmail {
+    margin-inline-start: 20px;
+  }
+
+  .logo-container {
+    margin-inline-start: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin-inline-end: 10px;
+      color: white;
+      font-size: 26px;
+    }
+  }
+  .logo {
+    width: 26px;
+  }
+
+  .grid {
+    margin-inline-end: 20px;
+    width: 30px;
+  }
+  .grid-modal {
+    position: absolute;
+    background-color: rgba(252, 192, 192, 0.61);
+    padding: 20px;
+    right: 0;
+    top: 100%;
+    gap: 10px;
+    border-radius: 0px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 3px #888888;
+    z-index: 1;
+  }
+  .search-container input:focus {
+    outline: none;
+  }
+  .slide-fade-enter-active {
+    transition: all 0.3s ease;
+  }
+
+  .slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .slide-fade-enter,
+.slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}

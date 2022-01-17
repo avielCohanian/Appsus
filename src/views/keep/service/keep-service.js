@@ -119,7 +119,7 @@ function _createNotes() {
         isPinned: false,
         info: {
           tube: '',
-          url: require('@/assets/img/vacation.jpg'),
+          url: '@/assets/img/vacation.jpg',
           subtitle: '',
           title: 'Costa Rica ',
           todos: [],

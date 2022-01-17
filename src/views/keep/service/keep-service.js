@@ -113,21 +113,7 @@ function _createNotes() {
           backgroundColor: 'white',
         },
       },
-      {
-        id: 'n102',
-        type: 'noteImg',
-        isPinned: false,
-        info: {
-          tube: '',
-          url: '@/assets/img/vacation.jpg',
-          subtitle: '',
-          title: 'Costa Rica ',
-          todos: [],
-        },
-        style: {
-          backgroundColor: 'white',
-        },
-      },
+
       {
         id: 'n103',
         type: 'noteTube',

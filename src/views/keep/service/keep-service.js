@@ -89,7 +89,7 @@ function _createNotes() {
         isPinned: true,
         info: {
           tube: '',
-          url: require('../assets/img/bobby.jpg'),
+          url: require('/assets/img/bobby.jpg'),
           subtitle: '',
           title: 'Bobby & Me  ',
           todos: [],
@@ -119,7 +119,7 @@ function _createNotes() {
         isPinned: false,
         info: {
           tube: '',
-          url: require('../assets/img/vacation.jpg'),
+          url: require('/assets/img/vacation.jpg'),
           subtitle: '',
           title: 'Costa Rica ',
           todos: [],
@@ -196,7 +196,7 @@ function _createNotes() {
         isPinned: false,
         info: {
           tube: '',
-          url: require('../assets/img/baby.jpg'),
+          url: require('/assets/img/baby.jpg'),
           subtitle: '',
           title: 'My Baby ',
           todos: [],
@@ -211,7 +211,7 @@ function _createNotes() {
         isPinned: false,
         info: {
           tube: '',
-          url: require('../assets/img/work.jpg'),
+          url: require('/assets/img/work.jpg'),
           subtitle: '',
           title: 'Work Is My Life  ',
           todos: [],

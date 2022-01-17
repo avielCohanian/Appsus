@@ -17,11 +17,11 @@
 </template>
 
 <script>
-  // import noteTxt from '../cmps/cmps-preview/note-txt.cmp.js';
-  import noteImg from '../cmps/note-img.vue';
+  import noteTxt from '../cmps/previews/noteTxt.vue';
+  import noteImg from '../cmps/previews/note-img.vue';
   // import slectBox from '../cmps/cmps-preview/select-box.cmp.js';
-  // import noteTodos from '../cmps/cmps-preview/note-todos.cmp.js';
-  // import noteTube from '../cmps/cmps-preview/note-tube.cmp.js';
+  import noteTodos from '../cmps/previews/noteTodos.vue';
+  import noteTube from '../cmps/previews/noteTube.vue';
   import { noteService } from '../service/keep-service.js';
   import { eventBus } from '../../../service/event-bus-service.js';
 
@@ -59,11 +59,11 @@
       },
     },
     components: {
-      // noteTxt,
+      noteTxt,
       noteImg,
-      // noteTodos,
+      noteTodos,
       // slectBox,
-      // noteTube
+      noteTube,
     },
   };
 </script>

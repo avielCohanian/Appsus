@@ -91,9 +91,15 @@
   justify-content: space-between;
   padding: 11px;
 }
+.note-cmp-smart .fa-thumbtack,
+.fa-backspace {
+  cursor: pointer;
+}
 
 .cmp-smart img {
   width: 100%;
+  border-radius: 3px;
+  margin-bottom: 10px;
 }
 
 /* tube-cmp */
@@ -192,6 +198,11 @@
   background-color: rgba(211, 211, 211, 0.746);
   padding: 15px;
   border-radius: 10px;
+}
+.txt-cmp-edit .fa-list,
+.fa-palette,
+.fa-image {
+  cursor: pointer;
 }
 
 /* note-list */
@@ -355,7 +366,7 @@ body.menu-open .main-nav {
 
 @media screen and (min-width: 670px) {
   .app-note {
-    margin-top: 5%;
+    margin-top: 7%;
   }
   .new-note-edit input {
     width: 350px;

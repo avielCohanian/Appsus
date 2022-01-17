@@ -3,6 +3,7 @@ export const utilService = {
   getRandomInt,
   debounce,
   saveToStorage,
+  loadFromStorage,
 };
 
 function makeId(length = 5) {
@@ -36,4 +37,9 @@ function debounce(func, wait = 500) {
 
 function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value) || null);
+}
+
+function loadFromStorage(key) {
+  let data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : undefined;
 }

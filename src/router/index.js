@@ -6,6 +6,9 @@ import itemEdit from '../views/item-edit.vue';
 import mailApp from '../views/mail/pages/email-app.vue';
 import mailDetails from '../views/mail/pages/email-details.cmp.vue';
 import keepApp from '../views/keep/pages/note-app.vue';
+import bookApp from '../views/book/pages/book-app.vue';
+import bookAdd from '../views/book/cmps/book-add.vue';
+import bookDetails from '../views/book/pages/book-details.vue';
 
 Vue.use(VueRouter);
 
@@ -36,6 +39,19 @@ const routes = [
     path: '/item/:itemId',
     name: 'edit',
     component: itemEdit,
+  },
+  {
+    path: '/book',
+    name: 'book',
+    component: bookApp,
+  },
+  {
+    path: '/book/add',
+    component: bookAdd,
+  },
+  {
+    path: '/book/:bookId',
+    component: bookDetails,
   },
 ];
 

@@ -1,13 +1,13 @@
 <template>
   <section
     class="note-preview"
-    :class="bcg"
+    :style="{ 'background-color': bcg }"
     @mouseover="hover = true"
     @mouseleave="hover = false"
     @click="openEdit(note.id)"
   >
     <div class="note-preview-icons">
-      <i v-show="hover || note.isPinned" class="fas fa-thumbtack" @click.stop="thumbtack(note)"></i>
+      <i v-show="hover || note.isPinned" class="fas fa-thumbtack" @click.stop="thumbtack"></i>
 
       <i v-show="hover" class="fas fa-backspace" @click.stop="remove"></i>
     </div>
@@ -31,22 +31,21 @@
     </div>
     <div v-show="hover" class="note-preview-edit" @click.stop>
       <i class="fab fa-youtube" for="youtube" @click="openEdit(note.id)"></i>
-      <!-- @click=search(beatles) -->
 
       <i class="fas fa-list" for="list" @click="openEdit(note.id)"></i>
-      <!-- @click=addList  -->
 
       <i class="fab fa-autoprefixer" for="palette"></i>
 
-      <label class="fas fa-palette" :for="note.id"></label>
-      <select :id="note.id" v-model="note.style.backgroundColor" @change.stop="save(note)">
-        <option>white</option>
-        <option>coral</option>
-        <option>pink</option>
-        <option>blue</option>
-        <option>green</option>
-        <option>yellow</option>
-      </select>
+      <div class="palette" v-if="isColorOpen" @click="selectColor">
+        <div style="background-color: white"></div>
+        <div style="background-color: #9c27b0b8"></div>
+        <div style="background-color: lightgreen"></div>
+        <div style="background-color: lightsteelblue"></div>
+        <div style="background-color: lightpink"></div>
+        <div style="background-color: coral"></div>
+      </div>
+
+      <label class="fas fa-palette" :for="note.id" @click="isColorOpen = !isColorOpen"></label>
 
       <i class="far fa-image" for="palette" @click="openEdit(note.id)"></i>
     </div>
@@ -64,22 +63,28 @@
         currNote: null,
         color: 'white',
         hover: false,
+        isColorOpen: false,
       };
     },
     created() {
       this.currNote = this.note;
     },
     methods: {
+      selectColor(event) {
+        this.note.style.backgroundColor = event.target.style.backgroundColor;
+        this.isColorOpen = !this.isColorOpen;
+        this.save();
+      },
       onImgInput(e) {
         const file = e.target.files[0];
         this.note.info.url = URL.createObjectURL(file);
-        this.save(this.note);
+        this.save();
       },
       setInput(ev) {
         this.answers = ev;
       },
-      save(note) {
-        this.$emit('save', note);
+      save() {
+        this.$emit('save', this.note);
       },
       remove() {
         this.$emit('remove');
@@ -89,11 +94,11 @@
       },
       addList() {
         this.note.type = 'noteTodos';
-        this.save(this.note);
+        this.save();
       },
-      thumbtack(note) {
-        note.isPinned = !note.isPinned;
-        this.save(note);
+      thumbtack() {
+        this.note.isPinned = !this.note.isPinned;
+        this.save();
       },
       search(val) {
         this.note.type = 'noteTube';
@@ -111,6 +116,7 @@
     computed: {
       bcg() {
         const currColor = this.note.style.backgroundColor;
+        return currColor;
         return {
           white: currColor === 'white',
           coral: currColor === 'coral',

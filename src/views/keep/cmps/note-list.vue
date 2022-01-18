@@ -1,7 +1,21 @@
 <template>
   <section>
+    <ul class="note-list main-app pined-note" v-if="pined">
+      <fieldset class="pined-container">
+        <legend>Pinned</legend>
+        <li v-for="note in notes" :key="note.id" class="notes-preview-container" v-show="note.isPinned">
+          <note-preview
+            :note="note"
+            @remove="remove(note.id)"
+            @openEdit="openEdit"
+            @save="save"
+            @click="scrollMeTo()"
+          />
+        </li>
+      </fieldset>
+    </ul>
     <ul class="note-list main-app">
-      <li v-for="note in notes" :key="note.id" class="notes-preview-container">
+      <li v-for="note in notes" :key="note.id" class="notes-preview-container" v-show="!note.isPinned">
         <note-preview :note="note" @remove="remove(note.id)" @openEdit="openEdit" @save="save" @click="scrollMeTo()" />
       </li>
     </ul>
@@ -37,7 +51,13 @@
         this.currNote = null;
       },
       save(note) {
-        noteService.save(note).then(console.log(this.notes));
+        this.$emit('update', note);
+        // noteService.save().then(console.log(this.notes));
+      },
+    },
+    computed: {
+      pined() {
+        return this.notes.some((note) => note.isPinned);
       },
     },
     components: {

@@ -21,7 +21,6 @@ function query() {
 }
 
 function remove(noteId) {
-  // return Promise.reject('Big balagan!')
   return storageService.remove(NOTE_KEY, noteId);
 }
 
@@ -80,29 +79,14 @@ function getYoutubeVid(val) {
     });
 }
 
-function _createNotes() {
-  let notes = storageService.query(NOTE_KEY);
+async function _createNotes() {
+  let notes = await storageService.query(NOTE_KEY);
   if (!notes || !notes.length) {
     notes = notes = [
       {
-        id: 'n100',
-        type: 'noteTxt',
-        isPinned: true,
-        info: {
-          tube: '',
-          url: require('@/assets/img/bobby.jpg'),
-          subtitle: '',
-          title: 'Bobby & Me  ',
-          todos: [],
-        },
-        style: {
-          backgroundColor: 'white',
-        },
-      },
-      {
         id: 'n101',
         type: 'noteTxt',
-        isPinned: false,
+        isPinned: true,
         info: {
           tube: '',
           url: '',
@@ -293,6 +277,21 @@ function _createNotes() {
           url: '',
           subtitle: '',
           title: 'bla',
+          todos: [],
+        },
+        style: {
+          backgroundColor: 'white',
+        },
+      },
+      {
+        id: 'n100',
+        type: 'noteTxt',
+        isPinned: false,
+        info: {
+          tube: '',
+          url: require('@/assets/img/bobby.jpg'),
+          subtitle: '',
+          title: 'Bobby & Me  ',
           todos: [],
         },
         style: {

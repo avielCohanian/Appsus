@@ -1,5 +1,5 @@
 <template>
-  <section class="app-note app-main" v-if="notes">
+  <section class="app-note main-layout" v-if="notes">
     <div class="new-note-edit">
       <input class="new-note-title" v-model="newNote.info.title" type="text" placeholder="Title" v-show="editNewNote" />
 
@@ -14,14 +14,16 @@
       </div>
 
       <div class="icons-new-note" v-show="editNewNote">
-        <select class="fas fa-palette" v-model="newNote.style.backgroundColor" id="select" name="color">
-          <option>white</option>
-          <option>coral</option>
-          <option>pink</option>
-          <option>blue</option>
-          <option>green</option>
-          <option>yellow</option>
-        </select>
+        <div class="palette" v-if="isColorOpen" @click="selectColor">
+          <div style="background-color: white"></div>
+          <div style="background-color: #9c27b0b8"></div>
+          <div style="background-color: lightgreen"></div>
+          <div style="background-color: lightsteelblue"></div>
+          <div style="background-color: lightpink"></div>
+          <div style="background-color: coral"></div>
+        </div>
+
+        <label class="fas fa-palette" @click="isColorOpen = !isColorOpen"></label>
 
         <i class="fab fa-youtube" for="youtube" @click="tubeMode"></i>
 
@@ -54,6 +56,7 @@
         editNewNote: false,
         isTubeMode: false,
         searchTubeMode: '',
+        isColorOpen: false,
       };
     },
     created() {
@@ -66,6 +69,10 @@
     },
 
     methods: {
+      selectColor(event) {
+        this.newNote.style.backgroundColor = event.target.style.backgroundColor;
+        this.isColorOpen = !this.isColorOpen;
+      },
       loadNotes() {
         noteService.query().then((notes) => {
           this.notes = notes;
@@ -117,7 +124,7 @@
       },
 
       update(note) {
-        noteService.updateNote(note);
+        noteService.save(note);
       },
       longNote() {
         this.editNewNote = true;

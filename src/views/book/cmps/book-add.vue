@@ -1,5 +1,5 @@
 <template>
-  <section class="book-add app-main">
+  <section class="book-add main-layout">
     <div class="books-container">
       <input v-model.lazy="bookName" type="text" placeholder="Search for a Book" />
       <ul v-if="books" class="book-list">

@@ -1,10 +1,5 @@
 <template>
   <div class="todos-cmp cmp-smart">
-    <div class="note-cmp-smart">
-      <i class="fas fa-thumbtack" @click="thumbtack"></i>
-      <i class="fas fa-backspace back" @click="closeModal" title="back"></i>
-    </div>
-
     <div class="todos-cmp-container">
       <img v-if="info.url" :src="info.url" :id="id" />
 
@@ -20,25 +15,6 @@
 
         <i class="fas fa-plus" @click.stop="addTodo" title="Add"></i>
       </div>
-    </div>
-
-    <div class="txt-cmp-edit">
-      <i class="fab fa-youtube" for="youtube"></i>
-      <i class="fas fa-list" for="list"></i>
-      <i class="fab fa-autoprefixer" for="palette"></i>
-
-      <select class="fas fa-palette" :class="color" v-model="bcg.backgroundColor" @change="update">
-        <option>white</option>
-        <option>coral</option>
-        <option>pink</option>
-        <option>blue</option>
-        <option>green</option>
-        <option>yellow</option>
-      </select>
-
-      <label class="far fa-image" for="id">
-        <!-- <input  id="id" type="file" :name=id  @change="onImgInput" hidden/> -->
-      </label>
     </div>
   </div>
 </template>
@@ -64,9 +40,6 @@
       update() {
         this.$emit('update');
       },
-      closeModal() {
-        this.$emit('closeModal');
-      },
       remove(idx) {
         this.$emit('removeTodo', idx);
       },
@@ -84,9 +57,6 @@
         this.info.todos.push(this.currTxt);
         this.update();
         this.currTxt = noteService.getEmptyTodo();
-      },
-      thumbtack() {
-        this.$emit('addPinned');
       },
     },
     computed: {

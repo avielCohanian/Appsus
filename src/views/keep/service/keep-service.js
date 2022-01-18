@@ -1,5 +1,6 @@
 import { storageService } from '../../../service/service.async.js';
 import { utilService } from '../../../service/util.service.js';
+import axios from 'axios';
 
 const NOTE_KEY = 'note';
 var gNote = _createNotes();
@@ -233,7 +234,7 @@ function _createNotes() {
           todos: [],
         },
         style: {
-          backgroundColor: 'blue',
+          backgroundColor: 'lightsteelblue',
         },
       },
       {

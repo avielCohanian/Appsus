@@ -76,7 +76,6 @@
         emailService.save(this.email).then(() => {
           eventBus.$emit('refresh');
         });
-        console.log(this.email.isRead);
         this.$router.push(`/mail/${id}`);
       },
     },

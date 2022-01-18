@@ -23,14 +23,11 @@
         books: null,
       };
     },
-    created() {
-      console.log('created');
-    },
+    created() {},
     watch: {
       bookName(val) {
         bookService.searchBooks(val).then((books) => {
           this.books = books.items;
-          console.log(books);
         });
       },
     },

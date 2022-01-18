@@ -64,15 +64,12 @@
         noteService.getYoutubeVid(val).then(this.renderVideos);
       },
       renderVideos(videos) {
-        console.log('videos', videos);
         var firstVid = videos[0].id.videoId;
         this.onSelectedVid(firstVid);
       },
       onSelectedVid(id) {
-        console.log(id);
         this.src = `https://www.youtube.com/embed/${id}`;
         this.info.tube = this.src;
-        console.log(this.info.tube);
         this.update();
       },
       thumbtack() {

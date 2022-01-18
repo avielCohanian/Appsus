@@ -50,18 +50,14 @@
         this.$emit('closeModal');
       },
       search(val) {
-        console.log(val);
         noteService.getYoutubeVid(val).then(this.renderVideos);
       },
       renderVideos(videos) {
-        console.log('videos', videos);
         var firstVid = videos[0].id.videoId;
         this.onSelectedVid(firstVid);
       },
       onSelectedVid(id) {
-        console.log(id);
         this.info.tube = `https://www.youtube.com/embed/${id}`;
-        console.log(this.info.tube);
         this.update();
       },
       thumbtack() {

@@ -27,7 +27,6 @@
     },
     methods: {
       update() {
-        console.log(this.bcg.backgroundColor);
         this.$emit('update', this.info, this.bcg);
       },
       closeModal() {

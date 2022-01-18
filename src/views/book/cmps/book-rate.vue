@@ -61,7 +61,6 @@
       },
       changeColor(num) {
         this.reviewToAdd.rate = num;
-        console.log('hello', num);
       },
     },
   };

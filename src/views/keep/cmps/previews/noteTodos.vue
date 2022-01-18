@@ -62,7 +62,6 @@
 
     methods: {
       update() {
-        console.log(this.bcg.backgroundColor);
         this.$emit('update');
       },
       closeModal() {
@@ -78,7 +77,6 @@
             else todo.doneAt = null;
           }
         });
-        console.log(this.info.todos);
         this.update();
       },
       addTodo() {
@@ -90,31 +88,11 @@
       thumbtack() {
         this.$emit('addPinned');
       },
-      // onImgInput(e) {
-      //     const file = e.target.files[0];
-      //     this.info.url = URL.createObjectURL(file);
-      //     this.update()
-      // },
-      // getTodosForDisplaySort() {
-      //     if (this.sortBy.category === 'IMPORTANCE') this.info.todos.sort((a, b) => a.importance - b.importance)
-      //     if (this.sortBy.category === 'CREATED') this.info.todos.sort((a, b) => (a.createdAt - b.createdAt))
-      //     console.log(this.info.todos);
-      // },
     },
     computed: {
       color() {
         return this.bcg.backgroundColor;
       },
-      // getTodosForDisplay() {
-      //     if (gFilterBy === 'ALL') return gTodos;
-      //     const todos = gTodos.filter(function(todo) {
-      //         return (todo.isDone && gFilterBy === 'DONE') ||
-      //             (!todo.isDone && gFilterBy === 'ACTIVE')
-      //     })
-      //     renderMessage(gFilterBy, todos)
-
-      //     return todos;
-      // }
     },
   };
 </script>

@@ -62,6 +62,7 @@
     created() {
       this.loadNotes();
       eventBus.$on('updating', () => this.loadNotes());
+      eventBus.$on('filterMail', this.setFilter);
       this.newNote = noteService.getEmptyNote();
     },
     destroyed() {
@@ -145,12 +146,21 @@
         this.add();
         this.searchTubeMode = '';
       },
+      isShow({ info }) {
+        let filter = this.filterBy.toLowerCase();
+        return (
+          (info.title && info.title.toLowerCase().includes(filter)) ||
+          (info.subtitle && info.subtitle.toLowerCase().includes(filter)) ||
+          (info.label && info.label.toLowerCase().includes(filter)) ||
+          (info.todos && info.todos.some((todo) => todo.txt.toLowerCase().includes(filter)))
+        );
+      },
     },
     computed: {
       notesToShow() {
-        let pinnedNote = this.notes.filter((note) => note.isPinned);
-        let NotPinnedNote = this.notes.filter((note) => !note.isPinned);
-        return pinnedNote.concat(NotPinnedNote);
+        let notes = this.notes;
+        if (!this.filterBy) return this.notes;
+        return notes.filter((note) => this.isShow(note));
       },
     },
     components: {

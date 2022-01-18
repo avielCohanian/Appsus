@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="notes">
     <ul class="note-list main-app pined-note" v-if="pined">
       <fieldset class="pined-container card-grid">
         <legend>Pinned</legend>

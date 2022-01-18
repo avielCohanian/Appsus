@@ -357,7 +357,7 @@ i {
 
 .new-note-edit {
   position: relative;
-
+  max-height: 180px;
   margin: 0 auto;
   text-align: center;
   display: flex;

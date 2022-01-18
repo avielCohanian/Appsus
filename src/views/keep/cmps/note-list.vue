@@ -1,7 +1,7 @@
 <template>
   <section>
     <ul class="note-list main-app pined-note" v-if="pined">
-      <fieldset class="pined-container">
+      <fieldset class="pined-container card-grid">
         <legend>Pinned</legend>
         <li v-for="note in notes" :key="note.id" class="notes-preview-container" v-show="note.isPinned">
           <note-preview

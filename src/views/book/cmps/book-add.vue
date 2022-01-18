@@ -16,6 +16,7 @@
 </template>
 
 <script>
+  import { bookService } from '../services/book-service';
   export default {
     data() {
       return {

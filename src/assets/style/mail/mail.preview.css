@@ -16,7 +16,7 @@
 }
 
 .email-list ul {
-  width: 80%;
+  width: 100%;
   margin-left: 180px;
 }
 
@@ -42,6 +42,9 @@
 
 .email-preview i {
   margin: -16px 8px 0 0;
+}
+.email-preview .icons-preview {
+  display: flex;
 }
 
 .email-preview:hover {
@@ -276,9 +279,7 @@
   .email-app {
     margin-top: 7%;
   }
-  .email-list {
-    width: 1600px;
-  }
+
   .email-preview {
     flex-direction: row;
     align-items: center;
@@ -288,7 +289,7 @@
     margin-inline-start: 80px;
   }
   .email-preview p {
-    min-width: 300px;
+    min-width: 265px;
   }
   /* Compose */
   .new-mail {
@@ -298,11 +299,9 @@
     font-size: 20px;
     max-width: 100%;
     margin: 0 auto;
-    padding-inline-start: 300px;
-    padding-inline-end: 300px;
+    margin-left: 8%;
     background-color: rgba(238, 237, 237, 0.281);
     gap: 10px;
-    margin-left: 92px;
   }
   .email-details-container {
     margin-top: 7%;
@@ -315,7 +314,7 @@
     width: 150px;
   }
   .email-list ul {
-    width: 80%;
-    margin-left: 310px;
+    width: 100%;
+    margin-left: 23%;
   }
 }

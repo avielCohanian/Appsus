@@ -18,6 +18,10 @@
       </div>
       <img v-if="note.info.url" :src="note.info.url" :id="note.id" />
 
+      <audio controls v-if="note.info.audio">
+        <source :src="note.info.audio" />
+      </audio>
+
       <strong v-show="note.info.title">{{ note.info.title }}</strong>
 
       <p v-show="note.info.subtitle">{{ note.info.subtitle }}</p>

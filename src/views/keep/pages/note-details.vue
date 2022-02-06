@@ -42,6 +42,7 @@
 <script>
   import noteTxt from '../cmps/previews/noteTxt.vue';
   import noteImg from '../cmps/previews/note-img.vue';
+  import noteAudio from '../cmps/previews/note-audio.vue';
   import noteTodos from '../cmps/previews/noteTodos.vue';
   import noteTube from '../cmps/previews/noteTube.vue';
   import { noteService } from '../service/keep-service.js';
@@ -113,6 +114,7 @@
       noteImg,
       noteTodos,
       noteTube,
+      noteAudio,
     },
   };
 </script>

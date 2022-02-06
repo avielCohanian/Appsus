@@ -98,7 +98,6 @@ async function _createNotes() {
           backgroundColor: 'white',
         },
       },
-
       {
         id: 'n103',
         type: 'noteTube',
@@ -162,6 +161,53 @@ async function _createNotes() {
         },
       },
       {
+        id: 'n109',
+        type: 'noteTodos',
+        isPinned: false,
+        info: {
+          tube: '',
+          url: '',
+          subtitle: '',
+          label: 'Get my stuff together',
+          title: 'Movies',
+          todos: [
+            {
+              id: utilService.makeId(),
+              txt: 'Two Distant Strangers',
+              doneAt: null,
+              createdAt: Date.now() + 50,
+            },
+            {
+              id: utilService.makeId(),
+              txt: 'Love and Monsters',
+              doneAt: null,
+              createdAt: Date.now(),
+            },
+            {
+              id: utilService.makeId(),
+              txt: 'Ex Machina',
+              doneAt: null,
+              createdAt: Date.now(),
+            },
+            {
+              id: utilService.makeId(),
+              txt: 'His House',
+              doneAt: null,
+              createdAt: Date.now(),
+            },
+            {
+              id: utilService.makeId(),
+              txt: 'My Octopus Teacher',
+              doneAt: null,
+              createdAt: Date.now(),
+            },
+          ],
+        },
+        style: {
+          backgroundColor: 'white',
+        },
+      },
+      {
         id: 'n105',
         type: 'noteTxt',
         isPinned: false,
@@ -170,6 +216,22 @@ async function _createNotes() {
           url: require('@/assets/img/baby.jpg'),
           subtitle: '',
           title: 'My Baby ',
+          todos: [],
+        },
+        style: {
+          backgroundColor: 'white',
+        },
+      },
+      {
+        id: 'n200',
+        type: 'noteAudio',
+        isPinned: false,
+        info: {
+          tube: '',
+          url: '',
+          audio: require('@/assets/audio/Everybody-Dance-Now.mp3'),
+          subtitle: '',
+          title: '',
           todos: [],
         },
         style: {
@@ -221,53 +283,7 @@ async function _createNotes() {
           backgroundColor: 'lightsteelblue',
         },
       },
-      {
-        id: 'n109',
-        type: 'noteTodos',
-        isPinned: false,
-        info: {
-          tube: '',
-          url: '',
-          subtitle: '',
-          label: 'Get my stuff together',
-          title: 'Movies',
-          todos: [
-            {
-              id: utilService.makeId(),
-              txt: 'Two Distant Strangers',
-              doneAt: null,
-              createdAt: Date.now() + 50,
-            },
-            {
-              id: utilService.makeId(),
-              txt: 'Love and Monsters',
-              doneAt: null,
-              createdAt: Date.now(),
-            },
-            {
-              id: utilService.makeId(),
-              txt: 'Ex Machina',
-              doneAt: null,
-              createdAt: Date.now(),
-            },
-            {
-              id: utilService.makeId(),
-              txt: 'His House',
-              doneAt: null,
-              createdAt: Date.now(),
-            },
-            {
-              id: utilService.makeId(),
-              txt: 'My Octopus Teacher',
-              doneAt: null,
-              createdAt: Date.now(),
-            },
-          ],
-        },
-        style: {
-          backgroundColor: 'white',
-        },
-      },
+
       {
         id: 'n110',
         type: 'noteTube',
